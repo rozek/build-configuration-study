@@ -77,14 +77,14 @@ The author often uses the following set of tools for building JavaScript modules
 * `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
 * `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle TypeScript properly
 * `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
-* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
+* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artifact can be "tree-shaken"
 
 ### package.json ###
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
 ```
-  "type": "module", // tell Node.js to prefer ESM over CJS
+  "type": "module", // tell Node.js to prefer ESM over CJS zu
   "main":    "./dist/throw-error.js", // points to the UMD module
 //"browser": "./dist/throw-error.js", // instead of "main" if pkg is for browsers only
   "module": "./dist/throw-error.esm.js", // points to the ESM module
@@ -185,7 +185,7 @@ The toolset for `expect-ordinal` is the same as for `throw-error`:
 * `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
 * `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle TypeScript properly
 * `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
-* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
+* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artifact can be "tree-shaken"
 
 ### package.json ###
 
@@ -311,7 +311,7 @@ Since Svelte should always get access to the source code of a module (perhaps af
 * `npm install --save-dev @rollup/plugin-node-resolve`<br>to allow rollup looking for installed npm modules
 * `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
 * `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle TypeScript properly
-* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
+* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artifact can be "tree-shaken"
 
 ### package.json ###
 
