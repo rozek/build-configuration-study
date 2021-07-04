@@ -160,9 +160,9 @@ If you want the UMD module to be minified, just uncomment the lines mentioning t
   }
 ```
 
-## expected-ordinal ##
+## expect-ordinal ##
 
-`expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and exports a single function `expectOrdinal` which checks if a given value is an ordinal JavaScript number and throws an error if not.
+`expect-ordinal` represents a module with own dependencies. The module has been written in TypeScript and exports a single function `expectOrdinal` which checks if a given value is an ordinal JavaScript number and throws an error if not.
 
 It may be used
 
@@ -171,9 +171,21 @@ It may be used
 * in a browser as a (partially) bundled or unbundled AMD module or simply from a global variable
 * within Svelte (unbundled)
 
-Since `expected-ordinal` does have its own dependencies (in contrast to `throw-error`), the question arises whether it should be bundled or not.
+Since `expect-ordinal` does have its own dependencies (in contrast to `throw-error`), the question arises whether it should be bundled or not.
 
 ### Tools used ###
+
+The toolset for `expect-ordinal` is the same as for `throw-error`:
+
+* `npm init` (you will have to answer some questions)<br>because the modules are going to be published using npm
+* `npm install --save-dev rollup`<br>that's the bundler the author uses (standard bundler for svelte)
+* `npm install --save-dev typescript`<br>because the author now only programs in TypeScript
+* `npm install --save-dev rimraf`<br>to cleanup folders at the beginning of a new build
+* `npm install --save-dev @rollup/plugin-node-resolve`<br>to allow rollup looking for installed npm modules
+* `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
+* `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle typescript properly
+* `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
+* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
 
 ### package.json ###
 
@@ -200,7 +212,69 @@ The full npm package description (`package.json`) can be found in the subfolder 
   },
 ```
 
+This variant of `package.json` reflects the fact that the module is built once with and once without bundling.
+
 ### rollup.config.js ###
+
+If no (or only partial) bundling is wanted, the `rollup.config.js` should list all packages that should *not* be bundled and specify a global variable name for each of them:
+
+```
+import commonjs   from '@rollup/plugin-commonjs'
+import resolve    from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+//import { terser } from 'rollup-plugin-terser' // uncomment for minification
+
+export default {
+  input: './src/expect-ordinal.ts',
+  external:['throw-error'],                  // list of (unbundled) dependencies
+  output: [
+    {
+      file:     './dist/expect-ordinal.js',
+      format:    'umd',           // builds for both Node.js and Browser
+      name:      'expectOrdinal', // required for UMD modules
+      globals:   { 'throw-error':'throwError' },  // globals for unbundled dep.s
+      noConflict:true,
+      exports:   'default',
+      sourcemap: true,
+//    plugins: [terser({ format:{ comments:false, safari10:true } })],
+    },{
+      file:     './dist/expect-ordinal.esm.js',
+      format:   'esm',
+      sourcemap:true,
+    }
+  ],
+  plugins: [
+    resolve(), commonjs(), typescript(),
+  ],
+}
+```
+
+### rollup-bundling.config.js ###
+
+If bundling is wanted, the need for the field `external` and `option.globals` no longer exists:
+
+```
+import commonjs   from '@rollup/plugin-commonjs'
+import resolve    from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+//import { terser } from 'rollup-plugin-terser' // uncomment for minification
+
+export default {
+  input: './src/expect-ordinal.ts',
+  output:{
+    file:     './dist/expect-ordinal.bundled.js',
+    format:    'umd',           // builds for both Node.js and Browser
+    name:      'expectOrdinal', // required for UMD modules
+    noConflict:true,
+    exports:   'default',
+    sourcemap: true,
+//  plugins: [terser({ format:{ comments:false, safari10:true } })],
+  },
+  plugins: [
+    resolve(), commonjs(), typescript(),
+  ],
+}
+```
 
 ### tsconfig.json ###
 
