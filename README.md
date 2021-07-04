@@ -56,7 +56,14 @@ In the end, the different parts are each assembled into a web page that uses bun
 
 `throw-error` represents a simple module without any dependencies. The module has been written in TypeScript and exports a single function `throwError` which simply throws a named JavaScript `Error` built from a given message.
 
+It may be used
 
+* in a bundler as (unbundled) ECMAScript module (ESM)
+* in Node.js as an (unbundled) CommonJS module (CJS)
+* in a browser as an (unbundled) AMD module or simply from a global variable
+* within Svelte (unbundled)
+
+Since `throw-error` does not have any dependencies, there is also no need for bundling.
 
 ## expected-ordinal ##
 
