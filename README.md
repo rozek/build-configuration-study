@@ -50,7 +50,7 @@ For each of these use cases, the files
 
 are described and the tools used mentioned.
 
-In the end, the different parts are each assembled into a web page that uses bundled or unbundled artifacts.
+In the end, the different parts are each assembled into a web page that uses bundled or unbundled artifacts: just load the files `example-with-bundled-component.html` or `example-with-unbundled-component.html`, resp., into your browser.
 
 ## throw-error ##
 
