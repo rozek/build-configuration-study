@@ -24,4 +24,4 @@ export default {
     resolve({ browser:true, dedupe:['svelte'] }), commonjs(), typescript(),
     postcss({ extract:false, inject:{insertAt:'top'} }),
   ],
-};
+}

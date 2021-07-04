@@ -4,7 +4,6 @@
   "description": "displays a countdown timer",
   "main": "./dist/svelte-countdown-view.js",
   "type": "module",
-  "browser": "./dist/svelte-countdown-view.bundled.js",
   "module": "./dist/svelte-countdown-view.esm.js",
   "svelte": "./dist/svelte-countdown-view.svelte",
   "types": "./dist/svelte-countdown-view.d.ts",

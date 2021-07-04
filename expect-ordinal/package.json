@@ -4,7 +4,6 @@
   "description": "validates a given argument as an ordinal number",
   "type": "module",
   "main":    "./dist/expect-ordinal.js",
-  "browser": "./dist/expect-ordinal.bundled.js",
   "module": "./dist/expect-ordinal.esm.js",
   "svelte": "./dist/expect-ordinal.esm.js",
   "types": "./dist/expect-ordinal.d.ts",

@@ -1,6 +1,6 @@
 import commonjs   from '@rollup/plugin-commonjs'
 import resolve    from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript';
+import typescript from '@rollup/plugin-typescript'
 //import { terser } from 'rollup-plugin-terser' // uncomment for minification
 
 export default {
@@ -23,4 +23,4 @@ export default {
   plugins: [
     resolve(), commonjs(), typescript(),
   ],
-};
+}
