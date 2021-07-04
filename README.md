@@ -58,7 +58,7 @@ In the end, the different parts are each assembled into a web page that uses bun
 
 It may be used
 
-* in a bundler as (unbundled) ECMAScript module (ESM)
+* in a bundler as an (unbundled) ECMAScript module (ESM)
 * in Node.js as an (unbundled) CommonJS module (CJS)
 * in a browser as an (unbundled) AMD module or simply from a global variable
 * within Svelte (unbundled)
@@ -71,9 +71,9 @@ Since `throw-error` does not have any dependencies, there is also no need for bu
 
 It may be used
 
-* in a bundler as (unbundled) ECMAScript module (ESM)
-* in Node.js as a bundled or unbundled CommonJS module (CJS)
-* in a browser as a bundled or unbundled AMD module or simply from a global variable
+* in a bundler as an (unbundled) ECMAScript module (ESM)
+* in Node.js as a (partially) bundled or unbundled CommonJS module (CJS)
+* in a browser as a (partially) bundled or unbundled AMD module or simply from a global variable
 * within Svelte (unbundled)
 
 Since `expected-ordinal` does have its own dependencies (in contrast to `throw-error`), the question arises whether it should be bundled or not.
@@ -82,8 +82,17 @@ Since `expected-ordinal` does have its own dependencies (in contrast to `throw-e
 
 `svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and exports a single function `Timer` which can be used as a Svelte action which invokes a given callback once a second.
 
-Since `svelte-timer-action` may only be used within Svelte, there is never any need for bundling (as Svelte should always have access to the component's source code). This restriction also simplifies configuration of the build chain.
+Since `svelte-timer-action` may only be used within Svelte, there is never any need for bundling (as Svelte should always have access to the component's source code anyway). This restriction also simplifies configuration of the build chain.
 
 ## svelte-countdown-view ##
 
 `svelte-countdown-view` represents a Svelte component (with dependencies). The component has been written in TypeScript and exports a simple countdown timer.
+
+It may be used
+
+* in a bundler as an (unbundled) ECMAScript module (ESM)
+* in Node.js as a (partially) bundled or unbundled CommonJS module (CJS)
+* in a browser as a (partially) bundled or unbundled AMD module or simply from a global variable
+* within Svelte (unbundled)
+
+In contrast to `expected-ordinal`, the build chain for this module now has to include the Svelte compiler.
