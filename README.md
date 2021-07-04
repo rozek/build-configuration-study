@@ -54,16 +54,16 @@ In the end, the different parts are each assembled into a web page that uses bun
 
 ## throw-error ##
 
-`throw-error` represents a simple module without any dependencies
+`throw-error` represents a simple module without any dependencies. The module has been written in TypeScript and
 
 ## expected-ordinal ##
 
-`expected-ordinal` represents a module with own dependencies
+`expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and
 
 ## svelte-timer-action ##
 
-`svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte
+`svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and
 
 ## svelte-countdown-view ##
 
-`svelte-countdown-view` represents a Svelte component (with dependencies)
+`svelte-countdown-view` represents a Svelte component (with dependencies). The component has been written in TypeScript and
