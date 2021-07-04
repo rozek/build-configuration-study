@@ -106,6 +106,42 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ### rollup.config.js ###
 
+The `rollup.config.js` shown below configures Rollup for two runs:
+
+* the first iteration creates an UMD module (which serves the need for CJS and AMD modules and a global variable pointing to the module's export
+* the second run creates the unbundled ECMAScript module
+
+```
+import commonjs   from '@rollup/plugin-commonjs'
+import resolve    from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+//import { terser } from 'rollup-plugin-terser' // uncomment for minification
+
+export default {
+  input: './src/throw-error.ts',
+  output: [
+    {
+      file:     './dist/throw-error.js',
+      format:    'umd',        // builds for both Node.js and Browser
+      name:      'throwError', // required for UMD modules
+      noConflict:true,
+      exports:   'default',
+      sourcemap: true,
+//    plugins: [terser({ format:{ comments:false, safari10:true } })], // dto.
+    },{
+      file:     './dist/throw-error.esm.js',
+      format:   'esm',
+      sourcemap:true,
+    }
+  ],
+  plugins: [
+    resolve(), commonjs(), typescript(),
+  ],
+}
+```
+
+If you want the UMD module to be minified, just uncomment the lines mentioning the `terser`.
+
 ### tsconfig.json ###
 
 `tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
