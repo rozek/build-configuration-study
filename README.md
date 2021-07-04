@@ -428,7 +428,7 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ### rollup.config.js ###
 
-Again, it could be useful to create (partially) bundled and unbundled artefacts - here is the configuration for unbundled (or only partially bundled) ones (listing all modules that should not be bundled together with their global variable names):
+Again, it could be useful to create (partially) bundled and unbundled artifacts - here is the configuration for unbundled (or only partially bundled) ones (listing all modules that should not be bundled together with their global variable names):
 
 ```
 import svelte         from 'rollup-plugin-svelte'
