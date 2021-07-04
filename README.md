@@ -69,7 +69,7 @@ Since `throw-error` does not have any dependencies, there is also no need for bu
 
 The author often uses the following set of tools for building JavaScript modules written in TypeScript
 
-* `npm init`<br>because the modules are going to be published using npm
+* `npm init` (you will have to answer some questions)<br>because the modules are going to be published using npm
 * `npm install --save-dev rollup`<br>that's the bundler the author uses (standard bundler for svelte)
 * `npm install --save-dev typescript`<br>because the author now only programs in TypeScript
 * `npm install --save-dev rimraf`<br>to cleanup folders at the beginning of a new build
