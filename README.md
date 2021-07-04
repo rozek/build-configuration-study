@@ -24,3 +24,12 @@ The author has walked this rocky road for the following underlying conditions:
 * programming in TypeScript
 * bundling et al. using rollup
 * publishing as npm package
+
+### Relevance for Programmers with other Constraints ###
+
+* **Developers not using Svelte**
+	* may simply ignore the creation of Svelte components or modules which are specifically made for Svelte
+	* but should definitely still consider the `svelte` field in `package.json` files to facilitate the use of their modules for Svelte users
+* **non-TypeScript Programmers**<br>just replace TypeScript (tsc) with a preprocessor of their choice and adjust the rollup plugins accordingly
+* **users of other bundlers than Rollup**<br>may still follow the requirements for `package.json` files and configure the bundler of thier choice accordingly
+* **Developers not publishing npm packages**<br>may still have to create the artifacts mentioned in `package.json` files even if they deploy them in other ways
