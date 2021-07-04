@@ -33,3 +33,21 @@ The author has walked this rocky road for the following underlying conditions:
 * **non-TypeScript Programmers**<br>just replace TypeScript with a preprocessor of their choice and adjust the rollup plugins accordingly
 * **users of other bundlers than Rollup**<br>may still follow the requirements for `package.json` files and configure the bundler of thier choice accordingly
 * **Developers not publishing npm packages**<br>may still have to create the artifacts mentioned in `package.json` files even if they deploy them in other ways
+
+### Practical Examples ###
+
+The patterns shown below have been backed (and verified) by practical (albeit artificially constructed) examples:
+
+* `throw-error` represents a simple module without any dependencies
+* `expected-ordinal` represents a module with own dependencies
+* `svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte
+* `svelte-countdown-view` represents a Svelte component (with dependencies). Svelte applications are just special forms of Svelte components
+
+For each of these use cases, the files
+
+* `package.json` and
+* `rollup.config.js`
+
+are described and the tools used mentioned.
+
+In the end, the different parts are each assembled into a web page that uses bundled or unbundled artifacts.
