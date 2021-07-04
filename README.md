@@ -69,6 +69,15 @@ Since `throw-error` does not have any dependencies, there is also no need for bu
 
 `expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and exports a single function `expectOrdinal` which checks if a given value is an ordinal JavaScript number and throws an error if not.
 
+It may be used
+
+* in a bundler as (unbundled) ECMAScript module (ESM)
+* in Node.js as a bundled or unbundled CommonJS module (CJS)
+* in a browser as a bundled or unbundled AMD module or simply from a global variable
+* within Svelte (unbundled)
+
+Since `expected-ordinal` does have its own dependencies (in contrast to `throw-error`), the question arises whether it should be bundled or not.
+
 ## svelte-timer-action ##
 
 `svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and exports a single function `Timer` which can be used as a Svelte action which invokes a given callback once a second.
