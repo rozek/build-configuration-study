@@ -51,3 +51,19 @@ For each of these use cases, the files
 are described and the tools used mentioned.
 
 In the end, the different parts are each assembled into a web page that uses bundled or unbundled artifacts.
+
+## throw-error ##
+
+`throw-error` represents a simple module without any dependencies
+
+## expected-ordinal ##
+
+`expected-ordinal` represents a module with own dependencies
+
+## svelte-timer-action ##
+
+`svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte
+
+## svelte-countdown-view ##
+
+`svelte-countdown-view` represents a Svelte component (with dependencies)
