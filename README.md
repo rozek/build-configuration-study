@@ -41,7 +41,7 @@ The patterns shown below have been backed (and verified) by practical (albeit ar
 * `throw-error` represents a simple module without any dependencies
 * `expected-ordinal` represents a module with own dependencies
 * `svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte
-* `svelte-countdown-view` represents a Svelte component (with dependencies). Svelte applications are just special forms of Svelte components
+* `svelte-countdown-view` represents a Svelte component (with dependencies, Svelte applications are just special forms of Svelte components)
 
 For each of these use cases, the files
 
