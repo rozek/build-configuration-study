@@ -75,7 +75,7 @@ The author often uses the following set of tools for building JavaScript modules
 * `npm install --save-dev rimraf`<br>to cleanup folders at the beginning of a new build
 * `npm install --save-dev @rollup/plugin-node-resolve`<br>to allow rollup looking for installed npm modules
 * `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
-* `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle typescript
+* `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle typescript properly
 * `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
 * `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
 
