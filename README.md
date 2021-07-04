@@ -67,6 +67,18 @@ Since `throw-error` does not have any dependencies, there is also no need for bu
 
 ### Tools used ###
 
+The author often uses the following set of tools for building JavaScript modules written in TypeScript
+
+* `npm init`<br>because the modules are going to be published using npm
+* `npm install --save-dev rollup`<br>that's the bundler the author uses (standard bundler for svelte)
+* `npm install --save-dev typescript`<br>because the author now only programs in TypeScript
+* `npm install --save-dev rimraf`<br>to cleanup folders at the beginning of a new build
+* `npm install --save-dev @rollup/plugin-node-resolve`<br>to allow rollup looking for installed npm modules
+* `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
+* `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle typescript
+* `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
+* `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artefact can be "tree-shaken"
+
 ### package.json ###
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
