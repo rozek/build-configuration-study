@@ -63,7 +63,7 @@ It may be used
 * in a browser as an (unbundled) AMD module or simply from a global variable
 * within Svelte (unbundled)
 
-Since `throw-error` does not have any dependencies, there is also no need for bundling.
+Since `throw-error` does not have any dependencies, there is also no need for any bundling.
 
 ### Tools used ###
 
