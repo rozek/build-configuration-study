@@ -54,16 +54,18 @@ In the end, the different parts are each assembled into a web page that uses bun
 
 ## throw-error ##
 
-`throw-error` represents a simple module without any dependencies. The module has been written in TypeScript and
+`throw-error` represents a simple module without any dependencies. The module has been written in TypeScript and exports a single function `throwError` which simply throws a named JavaScript `Error` built from a given message.
+
+
 
 ## expected-ordinal ##
 
-`expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and
+`expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and exports a single function `expectOrdinal` which checks if a given value is an ordinal JavaScript number and throws an error if not.
 
 ## svelte-timer-action ##
 
-`svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and
+`svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and exports a single function `Timer` which can be used as a Svelte action which invokes a given callback once a second.
 
 ## svelte-countdown-view ##
 
-`svelte-countdown-view` represents a Svelte component (with dependencies). The component has been written in TypeScript and
+`svelte-countdown-view` represents a Svelte component (with dependencies). The component has been written in TypeScript and exports a simple countdown timer.
