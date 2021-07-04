@@ -106,6 +106,24 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ### rollup.config.js ###
 
+### tsconfig.json ###
+
+`tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
+
+```
+  "include":["./src/**/*.ts"],
+  "exclude":[],
+  "compilerOptions": {
+    "module": "ESNext",   /* rollup wants it so */
+    "declaration": true,  /* for a '.d.ts' file */
+    "outDir":  "./",
+    "rootDir": "./",
+
+    "moduleResolution": "node", /* to work with NPM packages */
+    "esModuleInterop":  true,   /* for interoperability between CJS and ESM */
+  }
+```
+
 ## expected-ordinal ##
 
 `expected-ordinal` represents a module with own dependencies. The module has been written in TypeScript and exports a single function `expectOrdinal` which checks if a given value is an ordinal JavaScript number and throws an error if not.
@@ -148,6 +166,24 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ### rollup.config.js ###
 
+### tsconfig.json ###
+
+`tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
+
+```
+  "include":["./src/**/*.ts"],
+  "exclude":[],
+  "compilerOptions": {
+    "module": "ESNext",   /* rollup wants it so */
+    "declaration": true,  /* for a '.d.ts' file */
+    "outDir":  "./",
+    "rootDir": "./",
+
+    "moduleResolution": "node", /* to work with NPM packages */
+    "esModuleInterop":  true,   /* for interoperability between CJS and ESM */
+  }
+```
+
 ## svelte-timer-action ##
 
 `svelte-timer-action` represents a module (with dependencies) which has been specifically made for Svelte. The module has been written in TypeScript and exports a single function `Timer` which can be used as a Svelte action which invokes a given callback once a second.
@@ -174,6 +210,24 @@ The full npm package description (`package.json`) can be found in the subfolder 
 ```
 
 ### rollup.config.js ###
+
+### tsconfig.json ###
+
+`tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
+
+```
+  "include":["./src/**/*.ts"],
+  "exclude":[],
+  "compilerOptions": {
+    "module": "ESNext",   /* rollup wants it so */
+    "declaration": true,  /* for a '.d.ts' file */
+    "outDir":  "./",
+    "rootDir": "./",
+
+    "moduleResolution": "node", /* to work with NPM packages */
+    "esModuleInterop":  true,   /* for interoperability between CJS and ESM */
+  }
+```
 
 ## svelte-countdown-view ##
 
@@ -215,3 +269,25 @@ The full npm package description (`package.json`) can be found in the subfolder 
 ```
 
 ### rollup.config.js ###
+
+### tsconfig.json ###
+
+`tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
+
+The Svelte compiler requires some modifications compared to the configuration used for the other modules.
+
+```
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
+  "compilerOptions": {
+    "module": "ESNext",   /* rollup wants it so */
+    "declaration": true,  /* for a '.d.ts' file */
+    "outDir":  "./",
+    "rootDir": "./",
+
+    "moduleResolution": "node", /* to work with NPM packages */
+    "esModuleInterop":  true,   /* for interoperability between CJS and ESM */
+  }
+```
