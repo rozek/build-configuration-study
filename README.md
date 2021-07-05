@@ -325,6 +325,7 @@ Similar to `throw-error` you may omit `@rollup/plugin-node-resolve` and `@rollup
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
 ```
+  "module": "./dist/svelte-timer-action.esm.js",
   "svelte": "./dist/svelte-timer-action.esm.js", // points to what Svelte should use
   "types":  "./dist/svelte-timer-action.d.ts",   // points to type declarations
   "exports": {
