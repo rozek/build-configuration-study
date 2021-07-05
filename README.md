@@ -342,6 +342,8 @@ Note I: the extra invocation of the TypeScript compiler (`tsc`) is required in o
 
 Note II: the "agadoo" script had to be changed since there is no longer a `main` field in this package description.
 
+Note III: you may still decide to treat Svelte actions like any other JavaScript module and, e.g., build an UMD module which can be loaded separately into a browser - it's just that this situation rarely occurs, which is why the action will be partially bundled into the Svelte view in this example.
+
 ### rollup.config.js ###
 
 Again, in order to avoid bundling, a list of all external dependencies should be provided - however, the need for specifying global variable names does not apply:
