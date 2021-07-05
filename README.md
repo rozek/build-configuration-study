@@ -25,7 +25,7 @@ The author has walked this rocky road for the following scenarios:
 under the following conditions
 
 * programming in TypeScript
-* bundling et al. using rollup
+* bundling (and preprocessing et al.) using rollup
 * publishing as npm package
 
 ### Relevance for Programmers with different Development Environments ###
