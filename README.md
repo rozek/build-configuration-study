@@ -101,13 +101,13 @@ The full npm package description (`package.json`) can be found in the subfolder 
     "./package.json":"./package.json" // Svelte wants it so
   },
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && mv src/*.d.ts dist/ && rm src/*.js",
+    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist/ && rm src/*.js",
     "agadoo":"agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
-Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove both the `tsc` and the `mv src/*.d.ts dist/` command from the "scripts.build" line.
+Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
 
 ### rollup.config.js ###
 
@@ -209,7 +209,7 @@ The full npm package description (`package.json`) can be found in the subfolder 
     "./package.json":"./package.json" // Svelte wants it so
   },
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && mv src/*.d.ts dist/ && rm src/*.js",
+    "build": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && tsc && mv src/*.d.ts dist/ && rm src/*.js",
     "agadoo":"agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -217,7 +217,7 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 This variant of `package.json` reflects the fact that the module is built once with and once without bundling.
 
-Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove both the `tsc` and the `mv src/*.d.ts dist/` command from the "scripts.build" line.
+Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
 
 ### rollup.config.js ###
 
@@ -329,13 +329,13 @@ The full npm package description (`package.json`) can be found in the subfolder 
     "./package.json":"./package.json" // Svelte wants it so
   },
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && mv src/*.d.ts dist/ && rm src/*.js*",
+    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist/ && rm src/*.js*",
     "agadoo":"agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
-Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove both the `tsc` and the `mv src/*.d.ts dist/` command from the "scripts.build" line.
+Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
 
 ### rollup.config.js ###
 
@@ -427,13 +427,13 @@ The full npm package description (`package.json`) can be found in the subfolder 
     "./package.json":"./package.json" // Svelte wants it so
   },
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && rollup -c rollup-bundling.config.js && mv src/*.d.ts dist/ && rm src/*.js",
+    "build": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && tsc && mv src/*.d.ts dist/ && rm src/*.js",
     "agadoo":"agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
-Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove both the `tsc` and the `mv src/*.d.ts dist/` command from the "scripts.build" line.
+Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
 
 ### rollup.config.js ###
 
