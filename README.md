@@ -330,12 +330,14 @@ The full npm package description (`package.json`) can be found in the subfolder 
   },
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist/ && rm src/*.js*",
-    "agadoo":"agadoo",
+    "agadoo":"agadoo ./dist/svelte-timer-action.esm.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
-Note: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
+Note I: the extra invocation of the TypeScript compiler (`tsc`) is required in order to properly generate a type declaration file (see [issue 105](https://github.com/rollup/plugins/issues/105) of the `@rollup/plugin-typescript` plugin - if you don't need such a file, you may safely remove the whole `&& tsc && mv src/*.d.ts dist && rm src/*.js` command chain from the "scripts.build" line.
+
+Note II: the "agadoo" script had to be changed since there is no longer a `main` field in this package description.
 
 ### rollup.config.js ###
 
