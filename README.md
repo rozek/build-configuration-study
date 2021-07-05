@@ -318,6 +318,8 @@ Since Svelte should always get access to the source code of a module (perhaps af
 * `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle TypeScript properly
 * `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artifact can be "tree-shaken"
 
+Similar to `throw-error` you may omit `@rollup/plugin-node-resolve` and `@rollup/plugin-commonjs` if your action does not have any dependencies.
+
 ### package.json ###
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
@@ -361,6 +363,8 @@ export default {
   ],
 }
 ```
+
+Similar to `throw-error` you may omit any `commonjs` and `resolve` imports and invocations if your action does not have any dependencies.
 
 ### tsconfig.json ###
 
