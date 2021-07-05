@@ -2,6 +2,7 @@
   "name": "svelte-timer-action",
   "version": "0.1.0",
   "description": "invokes a given callback once a second",
+  "module": "./dist/svelte-timer-action.esm.js",
   "svelte": "./dist/svelte-timer-action.esm.js",
   "types": "./dist/svelte-timer-action.d.ts",
   "exports": {
