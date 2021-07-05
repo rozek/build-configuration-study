@@ -16,16 +16,19 @@ Unfortunately, the requirements of a "bundler" for the modules to be used are di
 
 And to top it all off, a programmer has to painstakingly gather the individual requirements from the Internet - taking into account only the relevant ones and neglecting all outdated (or possibly even incorrect) publications.
 
-The author has walked this rocky road for the following underlying conditions:
+The author has walked this rocky road for the following scenarios:
 
 * creating Svelte components (in general, or Svelte applications in particular)
 * creating JavaScript modules specifically for Svelte
 * creating general purpose JavaScript modules
+
+under the following conditions
+
 * programming in TypeScript
 * bundling et al. using rollup
 * publishing as npm package
 
-### Relevance for Programmers with other Constraints ###
+### Relevance for Programmers with different Development Environments ###
 
 * **Developers not using Svelte**
 	* may simply ignore the creation of Svelte components or modules which are specifically made for Svelte
