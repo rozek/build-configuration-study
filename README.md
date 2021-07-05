@@ -76,11 +76,11 @@ The author often uses the following set of tools for building JavaScript modules
 * `npm install --save-dev rollup`<br>that's the bundler the author uses (standard bundler for svelte)
 * `npm install --save-dev typescript`<br>because the author now only programs in TypeScript
 * `npm install --save-dev rimraf`<br>to cleanup folders at the beginning of a new build
-* `npm install --save-dev @rollup/plugin-node-resolve`<br>to allow rollup looking for installed npm modules
-* `npm install --save-dev @rollup/plugin-commonjs`<br>because npm modules are still often CJS modules (rather than ECMAScript modules)
 * `npm install --save-dev @rollup/plugin-typescript`<br>to let rollup handle TypeScript properly
 * `npm install --save-dev rollup-plugin-terser`<br>for (optional) minification
 * `npm install --save-dev agadoo`<br>`agadoo` helps validating that the built (unbundled) artifact can be "tree-shaken"
+
+Since this module does not have any dependencies, Rollup does not have to be told how to find and handle CommonJS modules
 
 ### package.json ###
 
@@ -115,8 +115,6 @@ The `rollup.config.js` shown below configures Rollup for two runs:
 * the second run creates the unbundled ECMAScript module
 
 ```
-import commonjs   from '@rollup/plugin-commonjs'
-import resolve    from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 //import { terser } from 'rollup-plugin-terser' // uncomment for minification
 
@@ -138,7 +136,7 @@ export default {
     }
   ],
   plugins: [
-    resolve(), commonjs(), typescript(),
+    typescript(),
   ],
 }
 ```
@@ -174,11 +172,11 @@ It may be used
 * in a browser as a (partially) bundled or unbundled AMD module or simply from a global variable
 * within Svelte (unbundled)
 
-Since `expect-ordinal` does have its own dependencies (in contrast to `throw-error`), the question arises whether it should be bundled or not.
+Since `expect-ordinal` does have its own dependencies (in contrast to `throw-error`), the need for (fully or partially) bundled artifact may arise.
 
 ### Tools used ###
 
-The toolset for `expect-ordinal` is the same as for `throw-error`:
+Since `expect-ordinal` does have its own dependencies (in form of npm packages), Rollup has to be instructed how to find and handle them:
 
 * `npm init` (you will have to answer some questions)<br>because the modules are going to be published using npm
 * `npm install --save-dev rollup`<br>that's the bundler the author uses (standard bundler for svelte)
