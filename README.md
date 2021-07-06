@@ -494,6 +494,8 @@ export default {
 }
 ```
 
+Note: this example demonstrates "partial bundling": assuming, that the `svelte-timer-action` will only be used by instances of `svelte-countdown-view`, whereas `throw-error` and `expect-ordinal` could be of general use (and, thus, run the risk of being loaded multiple times), `svelte-timer-action` is directly bundled into `svelte-countdown-view` in order to simplify its use on web pages (i.e., outside Svelte) - if you plan to write Svelte applications only, you may safely ignore this note (but then, you will not have to generate UMD modules anyway)
+
 ### rollup-bundling.config.js ###
 
 The Rollup configuration for bundled artefacts is simple - as usual:
