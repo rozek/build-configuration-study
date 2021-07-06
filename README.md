@@ -342,7 +342,7 @@ Note I: the extra invocation of the TypeScript compiler (`tsc`) is required in o
 
 Note II: the "agadoo" script had to be changed since there is no longer a `main` field in this package description.
 
-Note III: you may still decide to treat Svelte actions like any other JavaScript module and, e.g., build an UMD module which can be loaded separately into a browser (but do not forget to add a `main` or `browse` field to your `package.json`: [UNPKG](https://unpkg.com/) needs it) - it's just that this situation rarely occurs, which is why the action will be partially bundled into the Svelte view in this example.
+Note III: you may still decide to treat Svelte actions like any other JavaScript module and, e.g., build an UMD module which can be loaded separately into a browser (but do not forget to add a `main` or `browse` field to your `package.json` then: [UNPKG](https://unpkg.com/) needs it) - it's just that this situation rarely occurs, which is why the action will be partially bundled into the Svelte view in this example.
 
 ### rollup.config.js ###
 
