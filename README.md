@@ -88,7 +88,7 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ```
   "type": "module", // tell Node.js to prefer ESM over CJS zu
-  "main":    "./dist/throw-error.js", // points to the UMD module
+  "main":    "./dist/throw-error.js", // points to the UMD module, UNPKG needs it
 //"browser": "./dist/throw-error.js", // instead of "main" if pkg is for browsers only
   "module": "./dist/throw-error.esm.js", // points to the ESM module
   "svelte": "./dist/throw-error.esm.js", // points to what Svelte should use
@@ -196,7 +196,7 @@ The full npm package description (`package.json`) can be found in the subfolder 
 
 ```
   "type": "module", // tell Node.js to prefer ESM over CJS
-  "main":    "./dist/expect-ordinal.js", // points to the UMD module
+  "main":    "./dist/expect-ordinal.js", // points to the UMD module, UNPKG needs it
 //"browser": "./dist/expect-ordinal.bundled.js", // instead of "main" if pkg is for browsers only
   "module": "./dist/expect-ordinal.esm.js", // points to the ESM module
   "svelte": "./dist/expect-ordinal.esm.js", // points to what Svelte should use
