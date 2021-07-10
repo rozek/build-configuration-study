@@ -128,7 +128,6 @@ export default {
       format:    'umd',        // builds for both Node.js and Browser
       name:      'throwError', // required for UMD modules
       noConflict:true,
-      exports:   'default',
       sourcemap: true,
 //    plugins: [terser({ format:{ comments:false, safari10:true } })], // dto.
     },{
@@ -239,7 +238,6 @@ export default {
       name:      'expectOrdinal', // required for UMD modules
       globals:   { 'throw-error':'throwError' },  // globals for unbundled dep.s
       noConflict:true,
-      exports:   'default',
       sourcemap: true,
 //    plugins: [terser({ format:{ comments:false, safari10:true } })],
     },{
@@ -271,7 +269,6 @@ export default {
     format:    'umd',           // builds for both Node.js and Browser
     name:      'expectOrdinal', // required for UMD modules
     noConflict:true,
-    exports:   'default',
     sourcemap: true,
 //  plugins: [terser({ format:{ comments:false, safari10:true } })],
   },
@@ -474,7 +471,6 @@ export default {
 //      'svelte-timer-action':'Timer'                        // partial bundling
       },
       noConflict:true,
-      exports:   'default',
       sourcemap: true,
 //    plugins: [terser({ format:{ comments:false, safari10:true } })],
     },{
@@ -516,7 +512,6 @@ export default {
     format:    'umd',           // builds for both Node.js and Browser
     name:      'CountdownView', // required for UMD modules
     noConflict:true,
-    exports:   'default',
     sourcemap: true,
 //  plugins: [terser({ format:{ comments:false, safari10:true } })],
   },
