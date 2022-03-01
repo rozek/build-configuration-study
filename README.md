@@ -86,7 +86,7 @@ Since this module does not have any dependencies, Rollup does not have to be tol
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
-```
+```javascript
   "type": "module", // tell Node.js to prefer ESM over CJS zu
   "main":    "./dist/throw-error.js", // points to the UMD module, UNPKG needs it
 //"browser": "./dist/throw-error.js", // instead of "main" if pkg is for browsers only
@@ -116,7 +116,7 @@ The `rollup.config.js` shown below configures Rollup for two runs:
 * the first iteration creates an UMD module (which serves the need for CJS and AMD modules and a global variable pointing to the module's export
 * the second run creates the unbundled ECMAScript module
 
-```
+```javascript
 import typescript from '@rollup/plugin-typescript'
 //import { terser } from 'rollup-plugin-terser' // uncomment for minification
 
@@ -148,7 +148,7 @@ If you want the UMD module to be minified, just uncomment the lines mentioning t
 
 `tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
 
-```
+```javascript
   "include":["./src/**/*.ts"],
   "exclude":[],
   "compilerOptions": {
@@ -193,7 +193,7 @@ Since `expect-ordinal` does have its own dependencies (in form of npm packages),
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
-```
+```javascript
   "type": "module", // tell Node.js to prefer ESM over CJS
   "main":    "./dist/expect-ordinal.js", // points to the UMD module, UNPKG needs it
 //"browser": "./dist/expect-ordinal.bundled.js", // instead of "main" if pkg is for browsers only
@@ -222,7 +222,7 @@ Note: the extra invocation of the TypeScript compiler (`tsc`) is required in ord
 
 If no (or only partial) bundling is wanted, the `rollup.config.js` should list all packages that should *not* be bundled and specify a global variable name for each of them:
 
-```
+```javascript
 import commonjs   from '@rollup/plugin-commonjs'
 import resolve    from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
@@ -256,7 +256,7 @@ export default {
 
 If bundling is wanted, the need for the field `external` and `option.globals` no longer exists:
 
-```
+```javascript
 import commonjs   from '@rollup/plugin-commonjs'
 import resolve    from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
@@ -282,7 +282,7 @@ export default {
 
 `tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
 
-```
+```javascript
   "include":["./src/**/*.ts"],
   "exclude":[],
   "compilerOptions": {
@@ -321,7 +321,7 @@ Similar to `throw-error` you may omit `@rollup/plugin-node-resolve` and `@rollup
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
-```
+```javascript
   "module": "./dist/svelte-timer-action.esm.js",
   "svelte": "./dist/svelte-timer-action.esm.js", // points to what Svelte should use
   "types":  "./dist/svelte-timer-action.d.ts",   // points to type declarations
@@ -345,7 +345,7 @@ Note III: you may still decide to treat Svelte actions like any other JavaScript
 
 Again, in order to avoid bundling, a list of all external dependencies should be provided - however, the need for specifying global variable names does not apply:
 
-```
+```javascript
 import commonjs   from '@rollup/plugin-commonjs'
 import resolve    from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
@@ -370,7 +370,7 @@ Similar to `throw-error` you may omit any `commonjs` and `resolve` imports and i
 
 `tsconfig.json` is used to configure the TypeScript compiler. The full configuration can be found in the subfolder for this package within this repository. Shown here are the most important lines only - in contrast to `package.json`, this file *may* contain comments.
 
-```
+```javascript
   "include":["./src/**/*.ts"],
   "exclude":[],
   "compilerOptions": {
@@ -419,7 +419,7 @@ Now that the Svelte compiler has to be used, the list of tools becomes a little 
 
 The full npm package description (`package.json`) can be found in the subfolder for this package within this repository. Shown here are the most important lines only (with some comments attached that should not find their way into the actual JSON file, though)
 
-```
+```javascript
   "type": "module", // tell Node.js to prefer ESM over CJS
   "browser": "./dist/svelte-countdown-view.bundled.js", // because pkg is for browsers only
   "module": "./dist/svelte-countdown-view.esm.js", // points to the ESM module
@@ -445,7 +445,7 @@ Note: the extra invocation of the TypeScript compiler (`tsc`) is required in ord
 
 Again, it could be useful to create (partially) bundled and unbundled artifacts - here is the configuration for unbundled (or only partially bundled) ones (listing all modules that should not be bundled together with their global variable names):
 
-```
+```javascript
 import svelte         from 'rollup-plugin-svelte'
 import commonjs       from '@rollup/plugin-commonjs'
 import resolve        from '@rollup/plugin-node-resolve'
@@ -496,7 +496,7 @@ Note: this example demonstrates "partial bundling": assuming, that the `svelte-t
 
 The Rollup configuration for bundled artefacts is simple - as usual:
 
-```
+```javascript
 import svelte         from 'rollup-plugin-svelte'
 import commonjs       from '@rollup/plugin-commonjs'
 import resolve        from '@rollup/plugin-node-resolve'
@@ -531,7 +531,7 @@ export default {
 
 The Svelte compiler requires some modifications compared to the configuration used for the other modules.
 
-```
+```javascript
   "extends": "@tsconfig/svelte/tsconfig.json",
 
   "include": ["src/**/*.ts"],
